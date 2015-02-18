@@ -1,0 +1,10 @@
+{
+  "name": "quotenote",
+  "version": "0.0.1",
+  "directory": "assets/",
+  "dependencies": {
+    "jquery": "*",
+    "normalize.css": "~3.0.2",
+    "skeleton-css": "~2.0.4"
+  }
+}
