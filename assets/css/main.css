@@ -29,6 +29,15 @@ we aim to organize our site's CSS in the following pattern:
   float: right;
 }
 
+#editor {
+  background: white;
+  width: 300px;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 body h1, body h2, body h3, body h4, body h5, body h6 {
   font-weight: 300;
 }

@@ -9257,6 +9257,12 @@ window.qn.editor = {
   change_quote: function(quote_text) {
     var $quote = $('.quote-text');
     $quote.text(quote_text);
+  },
+
+  change_quote_on_input: function(){
+    var quote = window.prompt("what quote?");
+    this.change_quote(quote);
+    this.resize_text();
   }
 };
 
