@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   var jsFileList = [
     'vendor/jquery/dist/jquery.js',
+    'vendor/minicolors/jquery.minicolors.js',
     'assets/js/_*.js'
   ];
 

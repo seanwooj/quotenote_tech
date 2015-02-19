@@ -16,6 +16,22 @@ window.qn.editor = {
     var $ele = $(this.element);
     this.cycle_quotes($ele);
     this.resize_text($ele);
+    this.init_colorpicker();
+  },
+
+  init_colorpicker: function(){
+    var $input = $("input.minicolors");
+    var that = this;
+    $input.minicolors({
+        change: function(hex, opacity){
+          console.log(hex);
+          that.change_quote_color(hex);
+        }
+    });
+  },
+
+  change_quote_color: function(color){
+    $(".quote-text").css({color: color});
   },
 
   resize_text: function($ele){
@@ -55,9 +71,10 @@ window.qn.editor = {
   },
 
   change_quote_on_input: function(){
+    var $ele = $(this.element);
     var quote = window.prompt("what quote?");
     this.change_quote(quote);
-    this.resize_text();
+    this.resize_text($ele);
   }
 };
 
