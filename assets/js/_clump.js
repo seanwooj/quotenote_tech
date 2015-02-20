@@ -37,22 +37,21 @@ window.qn.editor = {
   resize_text: function($ele){
     var $quote = $ele.find('.quote-text');
     var $container = $ele.find('.quote');
+    var $background = $ele;
     var content_height = $container.outerHeight();
-    var window_height = $(window).height();
+    var background_height = $background.height();
     var font_size = parseInt($quote.css("font-size"));
 
-    $ele.height(window_height);
+    // $ele.height(background_height);
 
-    while(window_height > (content_height) ) {
-      // console.log(window_height + 'qh');
-      // console.log(content_height + 'ch');
+    while(background_height > (content_height) ) {
       content_height = $container.outerHeight();
       font_size = font_size + 0.5;
       $quote.css({"font-size": font_size + "px"});
     }
 
-    while(window_height < (content_height) ) {
-      console.log(window_height + 'qh');
+    while(background_height < (content_height) ) {
+      console.log(background_height + 'qh');
       console.log(content_height + 'ch');
       content_height = $container.outerHeight();
       font_size = font_size - 0.5;
@@ -75,6 +74,13 @@ window.qn.editor = {
     var quote = window.prompt("what quote?");
     this.change_quote(quote);
     this.resize_text($ele);
+  },
+
+  toggle_background: function(){ // This should be a temporary method.
+    var $ele = $("#quotenote");
+    $ele.css({"background-image": "url('assets/img/backgrounds/nature_03.jpg')"});
+    $ele.toggleClass("cover-background");
+
   }
 };
 
